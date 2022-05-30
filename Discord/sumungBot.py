@@ -32,13 +32,10 @@ async def 도움말(ctx):
 #pass_context=True
 @bot.command()
 async def 공지(ctx,arg1=1,arg2=5):
-    try:
-        embed=getNotice.createEmbedNotice(int(arg1),int(arg2))
-        botmsg=await ctx.reply("안녕 슴우! 이 메세지는 1분 뒤에 지워질거야 :blush: ",embed=embed,delete_after=60.0) #임베드 메세지 보내고 1분 뒤 삭제
-        await ctx.message.delete(delay=60.0) #사용자가 보낸 명령어 메세지를 1분 뒤에 삭제
-        await botmsg.edit()
-    except:
-        await ctx.channel.send('오류 발생',delete_after=60.0)
+    embed=getNotice.createEmbedNotice(int(arg1),int(arg2))
+    botmsg=await ctx.reply("안녕 슴우! 이 메세지는 1분 뒤에 지워질거야 :blush: ",embed=embed,delete_after=60.0) #임베드 메세지 보내고 1분 뒤 삭제
+    await ctx.message.delete(delay=60.0) #사용자가 보낸 명령어 메세지를 1분 뒤에 삭제
+    await botmsg.edit()
 
 
 TOKEN=os.environ.get('BOT_TOKEN')
