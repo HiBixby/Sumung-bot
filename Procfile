@@ -1,1 +1,1 @@
-worker: python /Discord/sumungBot.py
+worker: python /app/Discord/sumungBot.py
