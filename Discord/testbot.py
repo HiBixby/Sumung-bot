@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from Discord.to import Token
+from to import Token
 
 bot=commands.Bot(command_prefix='./')
 
