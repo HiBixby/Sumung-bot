@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext import tasks
 import os
+import ssl
 from Scraping import getNotice
 
 bot=commands.Bot(command_prefix='수뭉아 ')
@@ -17,6 +18,7 @@ async def on_ready():
     print('수뭉봇에 로그인중입니다. ')
     print(f"봇={bot.user.name}(으)로 연결중")
     print('연결이 완료되었습니다.')
+    print(ssl.OPENSSL_VERSION)
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="수뭉아 도움말"))
 
 @bot.command()

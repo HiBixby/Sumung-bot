@@ -2,13 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import discord
+import ssl
 
 def createEmbedNotice(page=1,articleLimit=5):
     page=max(1,abs(page))
     articleLimit=min(10,abs(articleLimit))
     articleOffset=(page-1)*articleLimit
     url="https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit="+str(articleLimit)+"&srUpperNoticeYn=on&article.offset="+str(articleOffset)
-
+    print(ssl.OPENSSL_VERSION,"getNotice.py")
     response = requests.get(url,verify=False)
     html=response.text
 
