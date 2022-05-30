@@ -16,9 +16,9 @@ def createEmbedNotice(page=1,articleLimit=5):
     content_titles=soup.find_all("dt",attrs={"class":re.compile("^board-thumb-content-title")})
     content_number=soup.find_all("li",attrs={"class":"board-thumb-content-number"})
 
-    embed=discord.Embed(title=webTitle, url="https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit=10&srUpperNoticeYn=on&article.offset=0", icon_url="https://www.smu.ac.kr/favicon.ico", description="통합공지 "+str(articleLimit)+"개씩 보기", color=0xFFD9B5)
+    embed=discord.Embed(title=webTitle, url="https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit=10&srUpperNoticeYn=on&article.offset=0", description="통합공지 "+str(articleLimit)+"개씩 보기", color=0xFFD9B5)
     embed.set_author(name="📢 상명대학교 공지사항") #임베드 맨 윗줄 Aauthor
-    embed.set_thumbnail(url="https://www.smu.ac.kr/favicon.ico") #임베드 썸네일
+    #embed.set_thumbnail(url="https://www.smu.ac.kr/favicon.ico") #임베드 썸네일
     numberEmoji=["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟"]
 
     for i in range(articleLimit):
