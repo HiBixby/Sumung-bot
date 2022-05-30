@@ -20,7 +20,7 @@ async def 공지(ctx):
     embed=discord.Embed(title="상명라운지 | 통합공지 게시판목록 | 상명라운지", url="https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit=10&srUpperNoticeYn=on&article.offset=0", description="통합공지 조회", color=0x2e35ff)
     embed.set_author(name="상명대학교 알리미 슴우")
     embed.set_thumbnail(url="https://www.smu.ac.kr/favicon.ico")
-    embed.add_field(name="undefined", value="undefined", inline=False)
+    embed.add_field(name="[naver](http://naver.com)", value="[naver](http://naver.com)", inline=False)
     embed.add_field(name="undefined", value="undefined", inline=False)
     embed.add_field(name="undefined", value="undefined", inline=False)
     embed.add_field(name="undefined", value="undefined", inline=False)
@@ -35,4 +35,5 @@ async def 공지(ctx):
 
 
 
-bot.run(Token)#보안을위해 다른 코드(to.py)에서 토큰값을 가져옴.
+
+bot.run(Token)#토큰 보안
