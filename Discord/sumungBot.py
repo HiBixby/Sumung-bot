@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.ext import tasks
-from to import Token
+import os
 from Scraping import getNotice
 
 bot=commands.Bot(command_prefix='수뭉아 ')
@@ -37,4 +37,5 @@ async def 공지(ctx,arg1=1,arg2=5):
     await ctx.message.delete(delay=60.0) #사용자가 보낸 명령어 메세지를 1분 뒤에 삭제
     await botmsg.edit()
 
-bot.run(Token)#토큰 보안
+TOKEN=os.environ.get('BOT_TOKEN')
+bot.run(TOKEN)#토큰 보안
