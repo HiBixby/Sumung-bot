@@ -7,7 +7,7 @@ def createEmbedNotice(page=1,articleLimit=5):
     page=max(1,abs(page))
     articleLimit=min(10,abs(articleLimit))
     articleOffset=(page-1)*articleLimit
-    response = requests.get("https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit="+str(articleLimit)+"&srUpperNoticeYn=on&article.offset="+str(articleOffset))
+    response = requests.get("https://www.smu.ac.kr/lounge/notice/notice.do?mode=list&&articleLimit="+str(articleLimit)+"&srUpperNoticeYn=on&article.offset="+str(articleOffset),headers={'User-Agent': 'Mozilla/5.0'})
     html=response.text
     soup=BeautifulSoup(html,'lxml')
 
