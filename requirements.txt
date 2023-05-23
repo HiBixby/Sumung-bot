@@ -1,5 +1,5 @@
 discord==1.7.3
 beautifulsoup4==4.10.0
-requests==2.27.1
+requests==2.31.0
 lxml==4.9.1
 pyOpenSSL==22.0.0
